@@ -1,8 +1,6 @@
 import requests
 from datetime import datetime
 
-
-
 def commentCatch (itemId, connector):
     cursor = connector.cursor()
 
