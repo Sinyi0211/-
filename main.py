@@ -1,7 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
-import pandas
-import json
 import pymysql
 from comment_crawler import commentCatch
 
@@ -33,7 +30,8 @@ for pagination in range(0,maxCatchCount*5,maxCatchCount):
     }
     req = requests.get(url, headers = header)
     data = req.json()
-# 將所需欄位存取至資料表中
+    
+    # 將所需欄位存取至資料表中
     for item in range(0,maxCatchCount):
         itemId = data['items'][item]['item_basic']['itemid']
         name = data['items'][item]['item_basic']['name']
